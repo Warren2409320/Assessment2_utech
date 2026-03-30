@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Gears | Cart</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="displayCart()">
+    <header>
+        <div class="container nav-container">
+            <div class="brand">
+                <img src="../Assets/logo.png" alt="Titan Gears logo" class="logo">
+                <h1>Titan Gears</h1>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html" class="active">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-section">
+        <h2>Your Cart</h2>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Price (JMD)</th>
+                    <th>Quantity</th>
+                    <th>Sub-Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p><strong>Discount:</strong> JMD <span id="discount">0</span></p>
+            <p><strong>Tax (15%):</strong> JMD <span id="tax">0</span></p>
+            <p><strong>Total:</strong> JMD <span id="total">0</span></p>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-danger" onclick="clearCart()">Clear All</button>
+            <a href="checkout.html" class="btn">Check Out</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Titan Gears. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- IA#2 Q1: Proper HTML5 document structure -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Gears | Home</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- IA#2 Q1: Semantic tags used - header, nav, main, section, footer -->
+    <header>
+        <div class="container nav-container">
+            <div class="brand">
+                <img src="../Assets/logo.png" alt="Titan Gears logo" class="logo">
+                <h1>Titan Gears</h1>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>Gear Up Like a Titan</h2>
+                    <p>
+                        Premium safety gear for construction, logistics, and industrial teams.
+                        Built for safety. Designed for strength.
+                    </p>
+                    <a href="products.html" class="btn">Shop Now</a>
+                </div>
+                <div class="hero-image">
+                    <img src="../Assets/hero.png" alt="Workers wearing Titan Gears safety equipment">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured products -->
+        <section class="featured-products container">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="../Assets/vest.jpg" alt="Reflective safety vest">
+                    <h3>Reflective Safety Vest</h3>
+                    <p class="price">JMD 2,500</p>
+                    <button class="btn" onclick="addToCart('Reflective Safety Vest', 2500)">Add to Cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="../Assets/helmet.jpg" alt="Industrial safety helmet">
+                    <h3>Safety Helmet</h3>
+                    <p class="price">JMD 3,800</p>
+                    <button class="btn" onclick="addToCart('Safety Helmet', 3800)">Add to Cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="../Assets/gloves.jpg" alt="Protective work gloves">
+                    <h3>Protective Gloves</h3>
+                    <p class="price">JMD 1,200</p>
+                    <button class="btn" onclick="addToCart('Protective Gloves', 1200)">Add to Cart</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why choose us -->
+        <section class="why-us container">
+            <h2>Why Choose Titan Gears?</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Reliable Protection</h3>
+                    <p>Products designed to support safety and durability on the job.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Professional Quality</h3>
+                    <p>We provide PPE solutions for businesses and individuals across Jamaica.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Custom Branding</h3>
+                    <p>Selected products can be customized to match your company branding.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Titan Gears. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
