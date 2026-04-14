@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- IA#2 Q1 -->
+    <!-- Product Catalogue Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Products</title>
@@ -17,9 +17,10 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Login</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="invoice.html">Invoice</a></li>
@@ -31,33 +32,17 @@
     </header>
 
     <main class="container page-section">
-        <h2>Our Products</h2>
-        <div class="product-grid">
+        <section>
+            <h2>Our Products</h2>
+            <p>
+                Browse Titan Gears safety equipment designed for construction,
+                industrial, logistics, and worksite protection.
+            </p>
+        </section>
 
- <article class="product-card">
-    <img src="vest.jpg" alt="Reflective safety vest">
-    <h3>Reflective Safety Vest</h3>
-    <p>High-visibility vest suitable for road work, construction, and security teams.</p>
-    <p class="price">JMD 2,500</p>
-    <button class="btn add-cart-btn" data-name="Reflective Safety Vest" data-price="2500">Add to Cart</button>
-</article>
-
-<article class="product-card">
-    <img src="helmet.jpg" alt="Industrial safety helmet">
-    <h3>Safety Helmet</h3>
-    <p>Strong, lightweight helmet built for industrial and construction environments.</p>
-    <p class="price">JMD 3,800</p>
-    <button class="btn add-cart-btn" data-name="Safety Helmet" data-price="3800">Add to Cart</button>
-</article>
-
-<article class="product-card">
-    <img src="gloves.jpg" alt="Protective gloves">
-    <h3>Protective Gloves</h3>
-    <p>Comfortable work gloves made for grip, protection, and repeated use.</p>
-    <p class="price">JMD 1,200</p>
-    <button class="btn add-cart-btn" data-name="Protective Gloves" data-price="1200">Add to Cart</button>
-</article>
-        </div>
+        <section>
+            <div id="product-grid" class="product-grid"></div>
+        </section>
     </main>
 
     <footer>
