@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Home Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Home</title>
@@ -16,7 +17,8 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Login</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="cart.html">Cart</a></li>
@@ -39,8 +41,14 @@
                         Premium safety gear for construction, logistics, and industrial teams.
                         Built for safety. Designed for strength.
                     </p>
-                    <a href="products.html" class="btn">Shop Now</a>
+
+                    <div class="button-group">
+                        <a href="products.html" class="btn">Shop Now</a>
+                        <a href="login.html" class="btn btn-dark">Login</a>
+                        <a href="register.html" class="btn btn-secondary">Register</a>
+                    </div>
                 </div>
+
                 <div class="hero-image">
                     <img src="hero.png" alt="Workers wearing Titan Gears safety equipment">
                 </div>
@@ -50,26 +58,31 @@
         <!-- Featured products -->
         <section class="featured-products container">
             <h2>Featured Products</h2>
+            <p>Explore some of our popular personal protective equipment items.</p>
+
             <div class="product-grid">
                 <article class="product-card">
                     <img src="vest.jpg" alt="Reflective safety vest">
                     <h3>Reflective Safety Vest</h3>
-                    <p class="price">JMD 2,500</p>
-                    <button class="btn" onclick="addToCart('Reflective Safety Vest', 2500)">Add to Cart</button>
+                    <p>High-visibility safety vest for road work, construction, and site operations.</p>
+                    <p class="price">JMD 2,500.00</p>
+                    <button type="button" class="btn" onclick="addToCart(1)">Add to Cart</button>
                 </article>
 
                 <article class="product-card">
                     <img src="helmet.jpg" alt="Industrial safety helmet">
                     <h3>Safety Helmet</h3>
-                    <p class="price">JMD 3,800</p>
-                    <button class="btn" onclick="addToCart('Safety Helmet', 3800)">Add to Cart</button>
+                    <p>Durable head protection designed for industrial and construction environments.</p>
+                    <p class="price">JMD 3,800.00</p>
+                    <button type="button" class="btn" onclick="addToCart(2)">Add to Cart</button>
                 </article>
 
                 <article class="product-card">
                     <img src="gloves.jpg" alt="Protective work gloves">
                     <h3>Protective Gloves</h3>
-                    <p class="price">JMD 1,200</p>
-                    <button class="btn" onclick="addToCart('Protective Gloves', 1200)">Add to Cart</button>
+                    <p>Comfortable work gloves made for grip, protection, and repeated daily use.</p>
+                    <p class="price">JMD 1,200.00</p>
+                    <button type="button" class="btn" onclick="addToCart(3)">Add to Cart</button>
                 </article>
             </div>
         </section>
@@ -77,15 +90,18 @@
         <!-- Why choose us -->
         <section class="why-us container">
             <h2>Why Choose Titan Gears?</h2>
+
             <div class="info-grid">
                 <div class="info-box">
                     <h3>Reliable Protection</h3>
-                    <p>Products designed to support safety and durability on the job.</p>
+                    <p>Products designed to support safety, durability, and comfort on the job.</p>
                 </div>
+
                 <div class="info-box">
                     <h3>Professional Quality</h3>
                     <p>We provide PPE solutions for businesses and individuals across Jamaica.</p>
                 </div>
+
                 <div class="info-box">
                     <h3>Custom Branding</h3>
                     <p>Selected products can be customized to match your company branding.</p>
