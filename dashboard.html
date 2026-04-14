@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Dashboard Page: User Frequency + Invoice Search -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Gears | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="brand">
+                <img src="logo.png" alt="Titan Gears logo" class="logo">
+                <h1>Titan Gears</h1>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard-section">
+        <section class="page-section">
+            <h2>User Analytics Dashboard</h2>
+            <p>
+                This dashboard displays the required user frequency figures based on
+                gender and age group, along with invoice search features.
+            </p>
+        </section>
+
+        <section class="dashboard-grid">
+            <div id="gender-frequency"></div>
+            <div id="age-frequency"></div>
+        </section>
+
+        <section class="search-box">
+            <h3>Search User Invoices by TRN</h3>
+            <p>Enter a TRN in the format <strong>000-000-000</strong>.</p>
+
+            <div class="search-row">
+                <input type="text" id="searchTrn" placeholder="Enter TRN">
+                <button type="button" class="btn" onclick="getUserInvoices()">Search Invoices</button>
+                <button type="button" class="btn btn-dark" onclick="showInvoices()">Show All Invoices in Console</button>
+            </div>
+        </section>
+
+        <section id="user-invoices" class="output-box">
+            <p>No invoice search has been performed yet.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Titan Gears. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
