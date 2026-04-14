@@ -1,5 +1,18 @@
-/* CSS: Variables, consistent theme, reusable classes */
+/* =========================================================
+   TITAN GEARS - MAIN STYLESHEET
+   Module: CIT2011
+   Covers:
+   - theme consistency
+   - responsive layout
+   - forms
+   - product grid
+   - cart
+   - checkout
+   - invoice
+   - dashboard frequency figures
+========================================================= */
 
+/* Q: CSS Variables, theme consistency, reusable classes */
 :root {
     --primary: #ff6b00;
     --dark: #121212;
@@ -8,18 +21,24 @@
     --white: #ffffff;
     --danger: #c62828;
     --secondary: #555555;
+    --success: #1b8a3d;
+    --border: #dddddd;
     --radius: 12px;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     --font-main: Arial, Helvetica, sans-serif;
 }
 
+/* Element selector */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Element selector */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-main);
     background-color: var(--light);
@@ -33,6 +52,26 @@ body {
     max-width: 1100px;
     margin: auto;
 }
+
+.page-section,
+.featured-products,
+.why-us,
+.dashboard-section,
+.invoice-section {
+    padding: 40px 0;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
 
 header {
     background-color: var(--dark);
@@ -81,6 +120,10 @@ header {
     color: var(--primary);
 }
 
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
     padding: 50px 0;
     background: linear-gradient(to right, #121212, #2a2a2a);
@@ -107,7 +150,12 @@ header {
 
 .hero-text p {
     margin-bottom: 20px;
+    max-width: 520px;
 }
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .btn {
     display: inline-block;
@@ -119,6 +167,7 @@ header {
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -137,14 +186,44 @@ header {
     background-color: var(--dark);
 }
 
-.page-section,
-.featured-products,
-.why-us {
-    padding: 40px 0;
+.btn-success {
+    background-color: var(--success);
 }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+/* Small action buttons used in cart */
+.qty-btn,
+.remove-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.qty-btn {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.remove-btn {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+/* =========================================================
+   PRODUCT GRID / CARDS
+========================================================= */
+
 .product-grid,
-.info-grid {
+.info-grid,
+.dashboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -154,7 +233,13 @@ header {
 .info-box,
 .form-box,
 .about-box,
-.checkout-box {
+.checkout-box,
+.invoice-box,
+.dashboard-card,
+.locked-box,
+.chart-box,
+.search-box,
+.output-box {
     background-color: var(--white);
     padding: 20px;
     border-radius: var(--radius);
@@ -173,7 +258,12 @@ header {
     font-weight: bold;
     color: var(--primary);
     margin: 10px 0;
+    font-size: 1.1rem;
 }
+
+/* =========================================================
+   FORMS
+========================================================= */
 
 form {
     display: flex;
@@ -181,41 +271,212 @@ form {
     gap: 12px;
 }
 
-input {
-    padding: 10px;
+label {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 15px;
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(255, 107, 0, 0.18);
+    border-color: var(--primary);
 }
 
-.cart-table {
+.form-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-help {
+    font-size: 0.9rem;
+    color: var(--grey);
+}
+
+.reset-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.reset-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   TABLES / CART / INVOICE
+========================================================= */
+
+.cart-table,
+.invoice-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     background-color: var(--white);
     box-shadow: var(--shadow);
+    overflow: hidden;
+    border-radius: var(--radius);
 }
 
 .cart-table th,
-.cart-table td {
-    border: 1px solid #ddd;
+.cart-table td,
+.invoice-table th,
+.invoice-table td {
+    border: 1px solid var(--border);
     padding: 12px;
     text-align: center;
 }
 
-.cart-summary {
+.cart-table th,
+.invoice-table th {
+    background-color: #f1f1f1;
+}
+
+.cart-summary,
+.invoice-summary {
     margin-top: 20px;
     background-color: var(--white);
     padding: 20px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
+
+.summary-line {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.summary-line strong {
+    display: inline-block;
+    min-width: 120px;
+}
+
+/* =========================================================
+   CHECKOUT / INVOICE
+========================================================= */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.invoice-meta {
+    margin-bottom: 20px;
+}
+
+.invoice-meta p {
+    margin-bottom: 6px;
+}
+
+/* =========================================================
+   DASHBOARD / FIGURES
+========================================================= */
+
+.chart-title {
+    margin-bottom: 16px;
+}
+
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar-label {
+    font-weight: bold;
+}
+
+.bar-track {
+    width: 100%;
+    background-color: #ececec;
+    border-radius: 999px;
+    height: 22px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: right;
+    padding-right: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 22px;
+    min-width: 24px;
+}
+
+.bar-value {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* =========================================================
+   SEARCH / DASHBOARD OUTPUT
+========================================================= */
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-row input {
+    flex: 1;
+    min-width: 220px;
+}
+
+.output-box {
+    margin-top: 20px;
+}
+
+/* =========================================================
+   ABOUT / LOCKED PAGE
+========================================================= */
+
+.about-box a {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.locked-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.locked-box h2 {
+    color: var(--danger);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
     background-color: var(--dark);
@@ -225,11 +486,17 @@ footer {
     margin-top: 30px;
 }
 
-/* Responsive design: mobile layout */
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* Mobile layout */
 @media (max-width: 600px) {
     .hero-content,
     .product-grid,
-    .info-grid {
+    .info-grid,
+    .dashboard-grid,
+    .checkout-layout {
         grid-template-columns: 1fr;
     }
 
@@ -238,15 +505,50 @@ footer {
         align-items: flex-start;
     }
 
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .hero-text h2 {
         font-size: 1.8rem;
     }
+
+    .bar-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .cart-table,
+    .invoice-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .button-group,
+    .search-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
-/* Responsive design: tablet/desktop layout */
+/* Tablet layout */
 @media (min-width: 601px) and (max-width: 949px) {
     .product-grid,
-    .info-grid {
+    .info-grid,
+    .dashboard-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Desktop emphasis */
+@media (min-width: 950px) {
+    .hero-text h2 {
+        font-size: 2.5rem;
     }
 }
