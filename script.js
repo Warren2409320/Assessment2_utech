@@ -631,41 +631,55 @@ function showUserFrequency() {
 
     if (!genderOutput || !ageOutput) return;
 
-    let genderCounts = {
-        Male: 0,
-        Female: 0,
-        Other: 0
-    };
-
-    let ageCounts = {
-        "18-25": 0,
-        "26-35": 0,
-        "36-50": 0,
-        "50+": 0
-    };
+    let genderCounts = { Male: 0, Female: 0, Other: 0 };
+    let ageCounts = { "18-25": 0, "26-35": 0, "36-50": 0, "50+": 0 };
 
     users.forEach(function (user) {
         if (genderCounts[user.gender] !== undefined) {
             genderCounts[user.gender]++;
         }
-
-        const ageGroup = getAgeGroup(user.age);
-        ageCounts[ageGroup]++;
+        ageCounts[getAgeGroup(user.age)]++;
     });
 
+    const maxGender = Math.max(1, ...Object.values(genderCounts));
+    const maxAge = Math.max(1, ...Object.values(ageCounts));
+
     genderOutput.innerHTML = `
-        <h3>Gender Frequency</h3>
-        <p>Male: ${genderCounts.Male}</p>
-        <p>Female: ${genderCounts.Female}</p>
-        <p>Other: ${genderCounts.Other}</p>
+        <div class="chart-box">
+            <h3 class="chart-title">Gender Frequency</h3>
+            <div class="bar-chart">
+                ${Object.keys(genderCounts).map(function (key) {
+                    const width = (genderCounts[key] / maxGender) * 100;
+                    return `
+                        <div class="bar-row">
+                            <div class="bar-label">${key}</div>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:${width}%">${genderCounts[key]}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+        </div>
     `;
 
     ageOutput.innerHTML = `
-        <h3>Age Group Frequency</h3>
-        <p>18-25: ${ageCounts["18-25"]}</p>
-        <p>26-35: ${ageCounts["26-35"]}</p>
-        <p>36-50: ${ageCounts["36-50"]}</p>
-        <p>50+: ${ageCounts["50+"]}</p>
+        <div class="chart-box">
+            <h3 class="chart-title">Age Group Frequency</h3>
+            <div class="bar-chart">
+                ${Object.keys(ageCounts).map(function (key) {
+                    const width = (ageCounts[key] / maxAge) * 100;
+                    return `
+                        <div class="bar-row">
+                            <div class="bar-label">${key}</div>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:${width}%">${ageCounts[key]}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+        </div>
     `;
 }
 
