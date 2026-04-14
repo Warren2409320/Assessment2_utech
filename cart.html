@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Shopping Cart Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="displayCart()">
+<body>
     <header>
         <div class="container nav-container">
             <div class="brand">
@@ -16,10 +17,11 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Login</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="cart.html" class="active">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="invoice.html">Invoice</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
@@ -30,30 +32,38 @@
     </header>
 
     <main class="container page-section">
-        <h2>Your Cart</h2>
+        <section>
+            <h2>Your Cart</h2>
+            <p>Review the items in your shopping cart before proceeding to checkout.</p>
+        </section>
 
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Price (JMD)</th>
-                    <th>Quantity</th>
-                    <th>Sub-Total</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-        </table>
+        <section>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price (JMD)</th>
+                        <th>Quantity</th>
+                        <th>Sub-Total (JMD)</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </section>
 
-        <div class="cart-summary">
-            <p><strong>Discount:</strong> JMD <span id="discount">0</span></p>
-            <p><strong>Tax (15%):</strong> JMD <span id="tax">0</span></p>
-            <p><strong>Total:</strong> JMD <span id="total">0</span></p>
-        </div>
+        <section class="cart-summary">
+            <p class="summary-line"><strong>Subtotal:</strong> JMD <span id="subtotal">0.00</span></p>
+            <p class="summary-line"><strong>Discount:</strong> JMD <span id="discount">0.00</span></p>
+            <p class="summary-line"><strong>Tax (15%):</strong> JMD <span id="tax">0.00</span></p>
+            <p class="summary-line"><strong>Total:</strong> JMD <span id="total">0.00</span></p>
+        </section>
 
-        <div class="button-group">
-            <button class="btn btn-danger" onclick="clearCart()">Clear All</button>
+        <section class="button-group">
+            <button type="button" class="btn btn-danger" onclick="clearCart()">Clear All</button>
             <a href="checkout.html" class="btn">Check Out</a>
-        </div>
+            <button type="button" class="btn btn-secondary" onclick="closeCart()">Close</button>
+        </section>
     </main>
 
     <footer>
