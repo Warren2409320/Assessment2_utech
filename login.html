@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Q1(b): Login Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Login</title>
@@ -16,13 +17,12 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="cart.html" class="active">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.html" class="active">Login</a></li>
                     <li><a href="register.html">Register</a></li>
-                    <li><a href="invoice.html" class="active">Invoice</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
@@ -33,15 +33,33 @@
     <main class="container page-section">
         <section class="form-box">
             <h2>Login</h2>
+
             <form id="loginForm">
-                <label for="loginEmail">Email</label>
-                <input type="email" id="loginEmail" placeholder="Enter your email">
+                <label for="trnLogin">TRN</label>
+                <input
+                    type="text"
+                    id="trnLogin"
+                    placeholder="Enter TRN (000-000-000)"
+                    maxlength="11"
+                    required
+                >
 
-                <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" placeholder="Enter your password">
+                <label for="passwordLogin">Password</label>
+                <input
+                    type="password"
+                    id="passwordLogin"
+                    placeholder="Enter your password"
+                    required
+                >
 
-                <button type="button" class="btn" onclick="validateLogin()">Login</button>
-                <p id="loginMessage"></p>
+                <div class="button-group">
+                    <button type="button" class="btn" onclick="validateLogin()">Login</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </div>
+
+                <a href="#" class="reset-link" onclick="resetPassword()">Reset Password</a>
+
+                <p id="loginMessage" class="form-message"></p>
             </form>
         </section>
     </main>
