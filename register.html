@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Q1(a): Registration Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Register</title>
@@ -31,24 +32,43 @@
     <main class="container page-section">
         <section class="form-box">
             <h2>Register</h2>
+
             <form id="registerForm">
-                <label for="fullNameReg">Full Name</label>
-                <input type="text" id="fullNameReg" placeholder="Enter full name">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter first name" required>
+
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter last name" required>
 
                 <label for="dob">Date of Birth</label>
-                <input type="date" id="dob">
+                <input type="date" id="dob" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
 
                 <label for="emailReg">Email</label>
-                <input type="email" id="emailReg" placeholder="Enter your email">
+                <input type="email" id="emailReg" placeholder="Enter your email" required>
 
-                <label for="usernameReg">Username</label>
-                <input type="text" id="usernameReg" placeholder="Choose a username">
+                <label for="trn">TRN</label>
+                <input type="text" id="trn" placeholder="000-000-000" maxlength="11" required>
 
                 <label for="passwordReg">Password</label>
-                <input type="password" id="passwordReg" placeholder="Choose a password">
+                <input type="password" id="passwordReg" placeholder="Minimum 8 characters" required>
 
-                <button type="button" class="btn" onclick="validateRegister()">Register</button>
-                <p id="registerMessage"></p>
+                <div class="button-row">
+                    <button type="button" class="btn" onclick="validateRegister()">Register</button>
+                    <button type="reset" class="btn btn-cancel">Cancel</button>
+                </div>
+
+                <p id="registerMessage" class="form-message"></p>
             </form>
         </section>
     </main>
