@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Checkout Page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Gears | Checkout</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="loadCheckoutSummary()">
+<body>
     <header>
         <div class="container nav-container">
             <div class="brand">
@@ -16,11 +17,12 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Login</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="checkout.html" class="active">Checkout</a></li>
                     <li><a href="invoice.html">Invoice</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -30,32 +32,38 @@
     </header>
 
     <main class="container page-section">
-        <h2>Checkout</h2>
-
-        <section class="checkout-box">
-            <h3>Order Summary</h3>
-            <p>Total Cost: JMD <span id="checkout-total">0</span></p>
+        <section>
+            <h2>Checkout</h2>
+            <p>Review your order summary and enter your shipping details to confirm checkout.</p>
         </section>
 
-        <section class="form-box">
-            <h3>Shipping Details</h3>
-            <form id="checkoutForm">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter full name">
+        <section class="checkout-layout">
+            <div class="checkout-box">
+                <h3>Order Summary</h3>
+                <p class="summary-line"><strong>Total Cost:</strong> JMD <span id="checkout-total">0.00</span></p>
+            </div>
 
-                <label for="address">Address</label>
-                <input type="text" id="address" placeholder="Enter shipping address">
+            <div class="form-box">
+                <h3>Shipping Details</h3>
 
-                <label for="amountPaid">Amount Being Paid</label>
-                <input type="number" id="amountPaid" placeholder="Enter amount">
+                <form id="checkoutForm">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter full name" required>
 
-                <div class="button-group">
-                    <button type="button" class="btn" onclick="confirmOrder()">Confirm</button>
-                    <button type="button" class="btn btn-secondary" onclick="cancelOrder()">Cancel</button>
-                    <button type="button" class="btn btn-danger" onclick="clearCart()">Clear All</button>
-                    <button type="button" class="btn btn-dark" onclick="window.close()">Close</button>
-                </div>
-            </form>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter shipping address" required>
+
+                    <label for="amountPaid">Amount Being Paid</label>
+                    <input type="number" id="amountPaid" placeholder="Enter amount" required>
+
+                    <div class="button-group">
+                        <button type="button" class="btn" onclick="confirmOrder()">Confirm</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelOrder()">Cancel</button>
+                        <button type="button" class="btn btn-danger" onclick="clearCart()">Clear All</button>
+                        <a href="cart.html" class="btn btn-dark">Close</a>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 
